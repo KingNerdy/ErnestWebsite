@@ -6,7 +6,7 @@ import postcssNesting from 'postcss-nesting';
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: 'docs'
+    outDir: 'build'
   },
   css: {
     postcss: {
