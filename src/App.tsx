@@ -4,7 +4,7 @@ import docsIcn from "./assets/docsIcn.svg"
 
 function App() {
   const rectArr = [1, 2, 3, 4, 5, 6, 7];
-
+ 
   return (
     <div className={cx(styles.bigBox)}>
       {rectArr.map((num) => {
