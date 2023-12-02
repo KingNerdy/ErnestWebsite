@@ -1,0 +1,34 @@
+/* font weight: 400 */
+@font-face {
+  font-family: "Lekton-Italic";
+  src: url("./font/Lekton-Italic.ttf");
+}
+/* font weight: 900 */
+@font-face {
+  font-family: "Lekend-Black";
+  src: url("./font/Lexend-Black.ttf");
+}
+/* font weight: 400 */
+@font-face {
+  font-family: "Lekend-Regular";
+  src: url("./font/Lexend-Regular.ttf")
+}
+
+body {
+  max-width: 100%;
+  margin:0;
+  padding:0;
+  overflow-x: hidden;
+}
+
+:root {
+  --light-blue: #8FEBF1;
+  --dark-blue: #2C238D;
+  --brown: #843C1D;
+  --white: #FFFFFF;
+  --bach: #ED916A;
+
+  --impt-text-font: "Lekend-Black";
+  --normal-text-font: "Lekend-Regular";
+  --code-text-font:"Lekton-Italic"
+}

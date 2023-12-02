@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styles from "./App.module.css";
+import cx from "classnames";
+import docsIcn from "./assets/docsIcn.svg"
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const rectArr = [1, 2, 3, 4, 5, 6, 7];
+ 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className={cx(styles.bigBox)}>
+      {rectArr.map((num) => {
+        let swipeLeft: boolean = false;
+        let swipeRight: boolean = false;
+        if (num % 2 === 0) {
+          swipeLeft = true;
+        } else if (num % 2 === 1) {
+          swipeRight = true;
+        }
+
+        if (num === 3) {
+          return (
+            <div
+              className={cx({
+                [styles.rectangle]: true,
+                [styles.swipeLeft]: swipeLeft,
+                [styles.swipeRight]: swipeRight,
+              })}
+            >
+              <span className={cx(styles.header)}>Hello World!</span>
+              
+            </div>
+          );
+        }
+
+        if (num === 4) {
+          return (
+            <div
+              className={cx({
+                [styles.rectangle]: true,
+                [styles.swipeLeft]: swipeLeft,
+                [styles.swipeRight]: swipeRight,
+              })}
+            >
+              <div className={cx(styles.description)}><div>Ernest here...</div></div>
+            </div>
+          );
+        }
+
+        if (num === 5) {
+          return (
+            <div
+              className={cx({
+                [styles.rectangle]: true,
+                [styles.swipeLeft]: swipeLeft,
+                [styles.swipeRight]: swipeRight,
+              })}
+            ><button><span>View Docs</span><img src={docsIcn}/></button></div>
+          );
+        }
+        return (
+          <div
+            className={cx({
+              [styles.rectangle]: true,
+              [styles.swipeLeft]: swipeLeft,
+              [styles.swipeRight]: swipeRight,
+            })}
+          ></div>
+        );
+      })}
+    </div>
+  );
 }
 
-export default App
+export default App;
